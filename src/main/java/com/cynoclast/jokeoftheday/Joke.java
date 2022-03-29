@@ -26,13 +26,22 @@ import java.time.LocalDate;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Joke {
 
+    /**
+     * A unique id.
+     */
     @Id
     @GeneratedValue
     private Long id;
 
+    /**
+     * The text of the joke.
+     */
     @NotNull
     private String joke;
 
+    /**
+     * The date that joke is for
+     */
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Column(unique = true)

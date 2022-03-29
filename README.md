@@ -9,6 +9,7 @@ Supports CRUD actions to the /jokes endpoint on port 8080
 * date format id yyyy-MM-dd (ISO-8601)
 * loads 3 jokes (ids 1-3) on startup
 * description field is optional and is only returned if populated
+* fixed joke per day - lets you do things like put Pie jokes on 3/14; tradeoff pretty rigid
 * uses Apache Lang StringBuilder and Lombok to be a little fancy
 * there's no services/view complexity because this isn't that complicated
 * not strictly REST (HATEOAS) due to lack of self/parent link generation (TODO?)

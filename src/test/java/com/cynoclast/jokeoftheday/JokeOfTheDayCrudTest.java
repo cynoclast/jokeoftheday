@@ -25,6 +25,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class JokeOfTheDayCrudTest {
 
+    /**
+     * Object mapper that handles JDK 8 and Java time stuff.
+     */
     public static final ObjectMapper OBJECT_MAPPER = JsonMapper.builder()
             .addModule(new ParameterNamesModule())
             .addModule(new Jdk8Module())
@@ -137,6 +140,14 @@ public class JokeOfTheDayCrudTest {
                 .andExpect(status().is4xxClientError());
     }
 
+    /**
+     * Takes objects and makes JSON.
+     * <p>
+     * Supports fancy JDK 8 (formerly joda) dates.
+     *
+     * @param obj the object to JSONify.
+     * @return JSON string representing the object
+     */
     public static String asJsonString(final Object obj) {
         try {
             return OBJECT_MAPPER.writeValueAsString(obj);

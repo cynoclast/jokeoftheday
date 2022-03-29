@@ -6,8 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class JokeOfTheDayApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JokeOfTheDayApplication.class, args);
-	}
+    /**
+     * Application main.
+     *
+     * @param args not used
+     */
+    public static void main(String[] args) {
+        SpringApplication.run(JokeOfTheDayApplication.class, args);
+    }
 
 }
