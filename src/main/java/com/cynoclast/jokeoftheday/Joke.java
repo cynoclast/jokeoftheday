@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
-import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,7 +17,7 @@ import java.time.LocalDate;
 /**
  * A joke.
  * id and the date are unique.
- * Date format is yyyy-MM-dd.
+ * Date format is @see {@link com.cynoclast.jokeoftheday.DateFormatConfig#DATE_FORMAT}.
  */
 @Data
 @Entity
@@ -43,7 +42,7 @@ public class Joke {
      * The date that joke is for
      */
     @NotNull
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = DateFormatConfig.DATE_FORMAT)
     @Column(unique = true)
     private LocalDate date;
 

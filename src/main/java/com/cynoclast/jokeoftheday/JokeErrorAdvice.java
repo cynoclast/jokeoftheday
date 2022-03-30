@@ -24,13 +24,12 @@ class JokeErrorAdvice {
 
     /**
      * Treats ConstraintViolationException as trying to save two jokes to one day.
-     * @param ex unique constraint violation
      * @return a 404
      */
     @ResponseBody
-    @ExceptionHandler(ConstraintViolationException.class)  // only constraint currently is unique day
+    @ExceptionHandler(ConstraintViolationException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    String oneJokePerDayHandler(ConstraintViolationException ex) {
-        return ex.getMessage();
+    String oneJokePerDayHandler() {
+        return "Only one joke permitted per day. Try picking a new date.";
     }
 }

@@ -7,6 +7,6 @@ class JokeNotFoundException extends RuntimeException {
      * @param id the id that wasn't found
      */
     public JokeNotFoundException(Long id) {
-        super("Could not find joke " + id);
+        super("Could not find joke with id " + id);
     }
 }

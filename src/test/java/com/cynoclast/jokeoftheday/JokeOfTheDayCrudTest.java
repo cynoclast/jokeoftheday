@@ -102,7 +102,7 @@ public class JokeOfTheDayCrudTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
-                .andExpect(content().string(containsString("Could not find joke 9001")));
+                .andExpect(content().string(containsString("Could not find joke with id 9001")));
     }
 
     @Test
