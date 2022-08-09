@@ -1,0 +1,24 @@
+curl -X POST localhost:8080/jokes -H 'Content-type:application/json' -d '{"joke": "Why do I drink coffee? I like to do stupid things faster and with more energy.", "date": "2022-03-28"}'
+curl -X POST localhost:8080/jokes -H 'Content-type:application/json' -d '{"joke": "What do you call a joke that isn’t funny? A sentence.", "date": "2022-03-28"}'
+curl -X POST localhost:8080/jokes -H 'Content-type:application/json' -d '{"joke": "What do you call a joke that isn’t funny? A sentence.", "date": "2022-03-28", "description": "sentence"}'
+
+
+
+
+curl -X POST localhost:8080/jokes -H 'Content-type:application/json' -d '{"joke": "I gave up my seat to an elderly person on the bus. And that’s how I lost my job as a bus driver.", "date": "2023-01-01", "description": "bus driver joke"}'
+
+
+
+The bean 'loadJokes', defined in class path resource        [com/cynoclast/jokeoftheday/LoadJokes.class], could not be registered. A bean with that name has already been defined in file 
+  [/Users/cynoclast/src/jokeoftheday/build/classes/java/main/com/cynoclast/jokeoftheday/LoadJokes.class] and overriding is disabled.
+
+
+
+curl -v 'localhost:8080/api/jokes/today' && \
+curl -X POST 'localhost:8080/api/jokes' -H 'Content-type:application/json' -d '{"joke": "I gave up my seat to an elderly person on the bus. And that’s how I lost my job as a bus driver.", "date": "2023-01-01", "description": "bus driver joke"}' && \
+curl -v 'localhost:8080/api/jokes' && \
+curl -v localhost:8080/api/jokes/4 && \
+curl -X PUT localhost:8080/api/jokes/4 -H 'Content-Type:application/json' -d '{"joke": "I gave up my seat to an elderly person on the bus. And that’s how I lost my job as a bus driver!", "date": "2023-01-01", "description": "bus driver joke with exclamation mark"}' && \
+curl -v localhost:8080/api/jokes/4 && \
+curl -v -X DELETE localhost:8080/api/jokes4 && \
+curl -v localhost:8080/api/jokes/4
